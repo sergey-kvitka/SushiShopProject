@@ -1,0 +1,121 @@
+* {
+    font-family: Arial, serif;
+}
+
+.item-tile-class {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.item-tile-class img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    box-shadow: 2px 2px 8px 2px rgba(34, 60, 80, 0.2);
+}
+
+.item-tile-class button {
+    background: #fffbd8;
+    border: 1px solid #4b4a00;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.item-tile-class button:hover {
+    background: #fffaa3;
+}
+
+.item-tile-class button:active {
+    background: #ecdfa5;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: -15px 30px 0 15px;
+}
+
+.cost-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 -12px -5px;
+}
+
+.cost-info * {
+    height: auto;
+    margin: 2px;
+    transition: all 0.25s ease;
+}
+
+.cost-info p {
+    width: 21%;
+    max-width: 21%;
+    overflow: hidden;
+    text-align: center;
+    background: #ddffdb;
+    padding: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cost-info p:hover {
+    background: #ffefc1;
+}
+
+.cost-info .remove-from_shop-cart {
+    width: 15%;
+    font-size: 18px;
+    border-radius: 50%;
+    padding-top: 6px;
+}
+
+.cost-info input {
+    width: 20%;
+    font-size: 20px;
+    padding: 5px 3px;
+}
+
+.cost-info .add-to-shop-cart {
+    width: 35%;
+    max-width: 35%;
+}
+
+#item-catalog-cont {
+    width: available;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-items: stretch;
+}
+
+.item-description {
+}
+
+.item-catalog {
+    width: 1000px;
+}
+
+#categories-panel-cont {
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #753e1a;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.category-button {
+    text-align: center;
+    width: 140px;
+    height: available;
+    margin: auto 15px;
+    cursor: pointer;
+    display: inline-block;
+    white-space: normal;
+
+}
+

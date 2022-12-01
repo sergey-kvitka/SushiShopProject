@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SushiShop/SushiShop.iml" filepath="$PROJECT_DIR$/SushiShop/SushiShop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SushiShopProject.iml" filepath="$PROJECT_DIR$/.idea/SushiShopProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SushiShopWeb/SushiShopWeb.iml" filepath="$PROJECT_DIR$/SushiShopWeb/SushiShopWeb.iml" />
+    </modules>
+  </component>
+</project>
