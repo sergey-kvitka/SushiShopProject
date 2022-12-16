@@ -2,6 +2,7 @@ package com.kvitka.sushishop.controllers;
 
 import com.kvitka.sushishop.entities.ExtraItem;
 import com.kvitka.sushishop.entities.Food;
+import com.kvitka.sushishop.entities.Ingredient;
 import com.kvitka.sushishop.interfaces.CatalogItem;
 import com.kvitka.sushishop.services.*;
 import org.springframework.web.bind.annotation.*;
@@ -33,8 +34,8 @@ public class CatalogController {
     @GetMapping("getAllCatalogItems")
     public List<CatalogItem> getAllCatalogItems() {
         List<CatalogItem> catalogItems = new ArrayList<>();
-        catalogItems.addAll(foodService.getAll());
-        catalogItems.addAll(extraItemService.getAll());
+        catalogItems.addAll(foodService.getAllFood());
+        catalogItems.addAll(extraItemService.getAllExtraItems());
 
         System.out.println(catalogItems);
         return catalogItems;
@@ -48,5 +49,25 @@ public class CatalogController {
     @PostMapping("saveExtraItem")
     private void saveExtraItem(@RequestBody ExtraItem extraItem) {
         extraItemService.saveExtraItem(extraItem);
+    }
+
+    @PostMapping("saveIngredients")
+    private void saveIngredients(@RequestBody List<Ingredient> ingredients) {
+        ingredientService.saveIngredients(ingredients);
+    }
+
+    @DeleteMapping("deleteFood")
+    private void deleteFood(@RequestBody Food food) {
+        foodService.deleteFood(food);
+    }
+
+    @DeleteMapping("deleteExtraItem")
+    private void deleteExtraItem(@RequestBody ExtraItem extraItem) {
+        extraItemService.deleteExtraItem(extraItem);
+    }
+
+    @DeleteMapping("deleteIngredients")
+    private void deleteIngredients(@RequestBody List<Ingredient> ingredients) {
+        ingredientService.deleteIngredients(ingredients);
     }
 }

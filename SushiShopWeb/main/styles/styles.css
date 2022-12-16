@@ -83,9 +83,8 @@
 }
 
 #item-catalog-cont {
-    width: available;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
     justify-items: stretch;
 }
@@ -94,7 +93,7 @@
 }
 
 .item-catalog {
-    width: 1000px;
+    max-width: 1000px;
 }
 
 #categories-panel-cont {
@@ -116,6 +115,21 @@
     cursor: pointer;
     display: inline-block;
     white-space: normal;
-
 }
 
+#item-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#food-properties-forms {
+    flex-direction: column;
+}
+
+.selected-type-button {
+    background: yellow;
+}
+
+#update-create-submit {
+    width: fit-content;
+}

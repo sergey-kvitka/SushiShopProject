@@ -1,14 +1,13 @@
 package com.kvitka.sushishop.entities;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.Length;
-import org.hibernate.annotations.Type;
-import org.hibernate.type.descriptor.java.ClobJavaType;
-import org.hibernate.type.descriptor.jdbc.ClobJdbcType;
 
 @Entity(name = "ingredients")
 @Getter

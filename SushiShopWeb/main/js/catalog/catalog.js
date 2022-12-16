@@ -79,7 +79,7 @@ function createItemTile(item) {
     let priceElement = document.createElement('p');
     let price = item.item.price;
     priceElement.innerHTML = price + '₽';
-    if (`${price}`.length > 4) priceElement.style = `font-size: 12px;`
+    if (`${price}`.length > 4) priceElement.setAttribute('style', 'font-size: 12px;');
     let remove = document.createElement('button');
     remove.innerHTML = 'X';
     remove.title = 'Удалить товар из корзины';

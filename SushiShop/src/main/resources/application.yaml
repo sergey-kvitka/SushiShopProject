@@ -6,6 +6,13 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+#      ddl-auto: none
     generate-ddl: true
+#    generate-ddl: false
 server:
   port: 1468
+
+jwt:
+  token:
+    secret: jwtappdemo
+    expired: 3600000

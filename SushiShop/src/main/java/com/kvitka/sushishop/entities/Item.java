@@ -1,12 +1,10 @@
 package com.kvitka.sushishop.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.Length;
-import org.springframework.lang.Nullable;
 
 @Entity(name = "items")
 @Getter
@@ -41,13 +39,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                ", imagePath='" + imagePath + '\'' +
-                ", category=" + category +
-                '}';
+        return "Item{" + "id=" + id + ", name='" + name + '\'' + ", price=" + price + ", description='" + description + '\'' + ", imagePath='" + imagePath + '\'' + ", category=" + category + '}';
     }
 }

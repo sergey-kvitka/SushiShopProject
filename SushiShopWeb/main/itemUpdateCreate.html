@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title id="update-create-title">Добавление или изменение товара</title>
+</head>
+<body>
+
+<h2 id="save-item-header-text">Добавление нового товара</h2>
+
+<div class="choosing-item-type">
+    <h3>Выбор типа товара</h3>
+    <button id="choose-type-food">Еда</button>
+    <button id="choose-type-extra">Прочие товары</button>
+</div>
+
+<form id="item-form">
+    <label>Название<input id="item-input-name" required></label>
+    <label>Цена<input type="number" id="item-input-price" required></label>
+    <label>Описание<textarea id="item-input-description"></textarea></label>
+    <label>Категория
+        <select id="category-list" required>
+        </select></label>
+
+    <div id="food-properties-forms">
+        <label>Количество отдельных объектов в товаре
+            <input type="number" required value="1" class="food-property-input"></label>
+        <label>Калории<input type="number" required class="food-property-input"></label>
+        <label>Вес (г.)<input type="number" required class="food-property-input"></label>
+    </div>
+    <label>Путь до файла картинки<input required></label>
+    <button type="submit" id="update-create-submit"></button>
+</form>
+
+<script src="js/global.js"></script>
+<script src="js/classes.js"></script>
+<script src="js/crud/itemUpdateCreate.js"></script>
+</body>
+</html>

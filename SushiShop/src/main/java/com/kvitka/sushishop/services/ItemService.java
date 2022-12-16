@@ -1,30 +1,26 @@
 package com.kvitka.sushishop.services;
 
 import com.kvitka.sushishop.entities.Item;
-import com.kvitka.sushishop.interfaces.SaveOrGetMethod;
 import com.kvitka.sushishop.repositories.ItemRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ItemService implements SaveOrGetMethod<Item> {
+public class ItemService {
 
     private final ItemRepository itemRepository;
+    private final CategoryService categoryService;
 
-    public ItemService(ItemRepository itemRepository) {
+    public ItemService(ItemRepository itemRepository, CategoryService categoryService) {
         this.itemRepository = itemRepository;
+        this.categoryService = categoryService;
     }
 
     public Item saveItem(Item item) {
+        item.setCategory(categoryService.saveCategory(item.getCategory()));
         return itemRepository.save(item);
     }
 
-    @Override
-    public Item saveOrGet(Item entity) {
-        return itemRepository.findByName(entity.getName())
-                .orElseGet(() -> itemRepository.save(entity));
-    }
-
-    public Item getItemById(Long id) {
-        return itemRepository.findById(id).orElse(null);
+    public void deleteItemByName(String name) {
+        itemRepository.deleteByName(name);
     }
 }
