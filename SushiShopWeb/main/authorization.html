@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/icon/sushi.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Авторизация</title>
+</head>
+<body onload="login()">
+<div class="all-cont log-cont">
+    <h2>Авторизация</h2>
+    <div class="login-form">
+        <label>Логин<input id="username-login-input"></label>
+        <p id="username-login-error" class="error-message"></p>
+        <label>Пароль<input type="password" id="password-login-input"></label>
+        <p id="password-login-error" class="error-message"></p>
+        <button class="beauty-button" id="login-button" style="margin-right: 100px">Авторизоваться</button>
+        <br/>
+        <a href="registration.html">Ещё не регистрировались? Создайте аккаунт!</a>
+    </div>
+</div>
+
+
+<script src="js/global.js"></script>
+<script src="js/classes.js"></script>
+<script src="js/auth/auth.js"></script>
+</body>
+</html>

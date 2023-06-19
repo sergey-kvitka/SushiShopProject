@@ -2,36 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="img/icon/plus.png">
     <link rel="stylesheet" href="styles/styles.css">
     <title id="update-create-title">Добавление или изменение товара</title>
 </head>
 <body>
 
-<h2 id="save-item-header-text">Добавление нового товара</h2>
+<div class="all-cont crud-cont">
+    <h2 id="save-item-header-text">Добавление нового товара</h2>
 
-<div class="choosing-item-type">
-    <h3>Выбор типа товара</h3>
-    <button id="choose-type-food">Еда</button>
-    <button id="choose-type-extra">Прочие товары</button>
-</div>
-
-<form id="item-form">
-    <label>Название<input id="item-input-name" required></label>
-    <label>Цена<input type="number" id="item-input-price" required></label>
-    <label>Описание<textarea id="item-input-description"></textarea></label>
-    <label>Категория
-        <select id="category-list" required>
-        </select></label>
-
-    <div id="food-properties-forms">
-        <label>Количество отдельных объектов в товаре
-            <input type="number" required value="1" class="food-property-input"></label>
-        <label>Калории<input type="number" required class="food-property-input"></label>
-        <label>Вес (г.)<input type="number" required class="food-property-input"></label>
+    <div class="choosing-item-type" id="choosing-item-type" style="margin-bottom: 30px; margin-left: 40px">
+        <h3>Выбор типа товара</h3>
+        <button class="beauty-button" id="choose-type-food" style="margin-right: 30px">Еда</button>
+        <button class="beauty-button" id="choose-type-extra">Прочие товары</button>
     </div>
-    <label>Путь до файла картинки<input required></label>
-    <button type="submit" id="update-create-submit"></button>
-</form>
+
+    <div id="item-form">
+        <label>Название<input placeholder="Название товара" id="item-input-name" type="text" required></label>
+        <p id="item-input-name-error" class="error-message"></p>
+        <label>Цена<input value="1" style="margin-left: 63px" type="number" id="item-input-price" required></label>
+        <p id="item-input-price-error" class="error-message"></p>
+        <label>Описание<textarea placeholder="Описание товара (при необходимости)"
+                                 id="item-input-description"></textarea></label>
+        <label style="margin: 20px 30px">Категория
+            <select id="category-list" style="margin-left: 15px" required>
+            </select></label>
+
+        <div id="food-properties-forms">
+            <label>Количество отдельных объектов в товаре
+                <input id="food-input-amount" type="number" required value="1" class="food-property-input"></label>
+            <p id="food-input-amount-error" class="error-message"></p>
+            <label>Калории<input value="1" id="food-input-calor" type="number" required
+                                 class="food-property-input"></label>
+            <p id="food-input-calor-error" class="error-message"></p>
+            <label>Вес (г.)<input value="1" id="food-input-weight" type="number" required
+                                  class="food-property-input"></label>
+            <p id="food-input-weight-error" class="error-message"></p>
+
+            <p style="font-size: 20px; margin-top: 0; margin-left: 30px; margin-bottom: 20px">Ингредиенты:</p>
+            <div id="choose-ingredients" style="margin-bottom: 30px">
+            </div>
+        </div>
+        <label style="margin: 0px 30px 0"
+        >Изображение<input class="beauty-button" id="item-input-image" type="file"></label>
+
+        <a id="download-img-link" download style="display: none;"></a>
+
+        <button style="margin-top: 30px; margin-left: 30px; margin-bottom: 10px"
+                class="beauty-button" id="update-create-submit"></button>
+    </div>
+</div>
 
 <script src="js/global.js"></script>
 <script src="js/classes.js"></script>

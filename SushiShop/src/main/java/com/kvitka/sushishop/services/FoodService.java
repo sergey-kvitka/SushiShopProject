@@ -32,8 +32,11 @@ public class FoodService {
         return foodRepository.save(food);
     }
 
-    public void deleteFood(Food food) {
-        itemService.deleteItemByName(food.getItem().getName());
-        foodRepository.deleteById(food.getId());
+    public void deleteFoodById(Long id) {
+        itemService.deleteItemById(id);
+    }
+
+    public Food getFoodById(Long id) {
+        return foodRepository.findById(id).orElse(null);
     }
 }

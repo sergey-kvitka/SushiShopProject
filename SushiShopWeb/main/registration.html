@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/icon/sushi.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Регистрация</title>
+</head>
+<body id="reg-body" onload="register()">
+<div class="all-cont reg-cont">
+    <h2>Регистрация</h2>
+    <div class="reg-form">
+        <label>Имя<input id="firstName-reg-input"></label>
+        <p id="firstName-reg-error" class="error-message"></p>
+        <label>Фамилия<input id="lastName-reg-input"></label>
+        <p id="lastName-reg-error" class="error-message"></p>
+        <label>Логин<input id="username-reg-input"></label>
+        <p id="username-reg-error" class="error-message"></p>
+        <label>Пароль<input type="password" id="password-reg-input"></label>
+        <p id="password-reg-error" class="error-message"></p>
+        <label>Подтверждение пароля<input type="password" id="check-pass-reg-input"></label>
+        <p id="check-pass-reg-error" class="error-message"></p>
+        <button class="beauty-button" id="register-button"  style="margin-right: 100px">Зарегистрироваться</button>
+        <br/>
+        <a href="authorization.html" style="margin-right: 20px">Уже зарегистрированы? Авторизуйтесь!</a>
+    </div>
+</div>
+
+
+    <script src="js/global.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/auth/auth.js"></script>
+</body>
+</html>

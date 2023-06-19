@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/icon/sushi.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Категории</title>
+</head>
+<body>
+<div class="all-cont category-cont">
+    <h2>Категории</h2>
+    <div id="crud-category-list">
+
+    </div>
+    <h2>Добавить категорию</h2>
+    <div id="create-category-form" class="category-elem" style="width: 70%; margin: 0 auto">
+        <input id="new-category-name" type="text" placeholder="Название категории">
+        <div>
+            <label>Еда<input type="radio" checked name="category-new" value="food"></label>
+            <label>Прочие товары<input type="radio" name="category-new" value="other"></label>
+        </div>
+        <div id="create-category-btn" style="color: #1ab51e; font-size: 32px; cursor: pointer" title="Создать категорию"
+        >✅</div>
+    </div>
+</div>
+
+
+<script src="js/global.js"></script>
+<script src="js/classes.js"></script>
+<script src="js/crud/categories.js"></script>
+</body>
+</html>

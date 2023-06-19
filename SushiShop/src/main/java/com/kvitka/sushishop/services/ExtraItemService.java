@@ -26,8 +26,11 @@ public class ExtraItemService {
         return extraItemRepository.save(extraItem);
     }
 
-    public void deleteExtraItem(ExtraItem extraItem) {
-        itemService.deleteItemByName(extraItem.getItem().getName());
-        extraItemRepository.deleteById(extraItem.getId());
+    public ExtraItem getExtraItemById(Long id) {
+        return extraItemRepository.findById(id).orElse(null);
+    }
+
+    public void deleteExtraItemById(Long id) {
+        itemService.deleteItemById(id);
     }
 }
