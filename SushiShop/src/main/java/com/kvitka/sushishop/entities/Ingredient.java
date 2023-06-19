@@ -1,14 +1,13 @@
 package com.kvitka.sushishop.entities;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.Length;
-import org.hibernate.annotations.Type;
-import org.hibernate.type.descriptor.java.ClobJavaType;
-import org.hibernate.type.descriptor.jdbc.ClobJdbcType;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity(name = "ingredients")
 @Getter
@@ -22,7 +21,6 @@ public class Ingredient {
     @Column(unique = true)
     private String name;
 
-    @Column(length = Length.LOB_DEFAULT)
     private String description;
 
     public Ingredient(String name, String description) {

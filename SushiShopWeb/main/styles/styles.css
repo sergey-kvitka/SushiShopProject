@@ -2,15 +2,65 @@
     font-family: Arial, serif;
 }
 
+body {
+    background: #fff1c6;
+}
+
+
+.header {
+    width: 100%;
+    background: #41161a;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 30;
+    text-decoration: none;
+}
+
+.header * {
+    margin: 0 30px;
+    color: white;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.header a:visited {
+    color: white;
+}
+
 .item-tile-class {
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 15px;
+    overflow: hidden;
+    background: white;
 }
 
 .item-tile-class img {
     width: 100%;
     aspect-ratio: 1 / 1;
+    object-fit: contain;
     box-shadow: 2px 2px 8px 2px rgba(34, 60, 80, 0.2);
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.item-tile-class img:hover {
+    box-shadow: 2px 2px 8px 2px #ffff4d;
+    border: 1px solid #ffffb4;
 }
 
 .item-tile-class button {
@@ -33,6 +83,14 @@
     flex-direction: row;
     justify-content: space-between;
     margin: -15px 30px 0 15px;
+}
+
+.ingredient-list span {
+    cursor: pointer;
+}
+
+.ingredient-list span:hover {
+    color: #0c7a1c;
 }
 
 .cost-info {
@@ -83,9 +141,9 @@
 }
 
 #item-catalog-cont {
-    width: available;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+            repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
     justify-items: stretch;
 }
@@ -94,12 +152,13 @@
 }
 
 .item-catalog {
-    width: 1000px;
+
 }
 
 #categories-panel-cont {
-    width: 100%;
-    padding: 20px;
+    width: auto;
+    margin: 0 10px;
+    padding: 25px 20px 20px;
     font-size: 16px;
     font-weight: bold;
     color: #753e1a;
@@ -110,12 +169,505 @@
 
 .category-button {
     text-align: center;
-    width: 140px;
-    height: available;
-    margin: auto 15px;
+    display: table-cell;
+    vertical-align: middle;
+    min-width: 150px;
+    margin: auto 20px 0;
     cursor: pointer;
-    display: inline-block;
     white-space: normal;
+}
+
+#item-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+#food-properties-forms {
+    flex-direction: column;
+}
+
+.selected-type-button {
+    background: #f6d6b7 !important;
+}
+
+#update-create-submit {
+    width: fit-content;
+}
+
+.reg-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#register-button {
+    width: fit-content;
+}
+
+.error-message {
+    color: red;
+}
+
+#choose-ingredients {
+    display: flex;
+    flex-direction: column;
+}
+
+.all-cont {
+    max-width: 1000px;
+    min-height: 88vh;
+    margin: 60px auto 0;
+    padding: 20px 10px 20px;
+    box-shadow: 2px 2px 8px 2px rgba(34, 60, 80, 0.5);
+    background: #fffbec;
+}
+
+.tile-admin-panel {
+    position: relative;
+    top: -15px;
+    right: -15px;
+    height: 0;
+    width: available;
+    font-size: 20px;
+    z-index: 28;
+}
+
+.tile-admin-panel div {
+    position: absolute;
+    opacity: 0.1;
+    right: 0;
+    top: 0;
+    z-index: 28;
+}
+
+.tile-admin-panel div div {
+    cursor: pointer;
+    z-index: 28;
+    opacity: 0.5;
+}
+
+.tile-admin-panel div div:hover {
+    opacity: 1;
+}
+
+.tile-admin-panel div:hover {
+    opacity: 1;
+}
+
+#item-catalog-header {
+    margin-left: 30px;
+}
+
+.notification {
+    overflow: hidden;
+    width: 400px;
+    background: rgb(0, 119, 225);
+    color: white;
+    margin: 20px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    cursor: default;
+    font-size: 22px;
+}
+
+.notification p {
+    margin: 20px 30px;
+}
+
+.notification div {
+    background: rgba(11, 0, 162, 0.77);
+    transition-duration: 5.8s;
+    transition-timing-function: linear;
+    height: 10px;
+    width: 100%;
+}
+
+#shop-cart-table {
+    font-size: 18px;
+    display: grid;
+    grid-row-gap: 0;
+    justify-items: stretch;
+    grid-template-columns: 3fr 2fr 1fr 0.9fr 0.85fr;
+    /*grid-template-columns: minmax(3fr, 3fr) minmax(2.5fr, 2.5fr) minmax(2fr, 2fr) minmax(1fr, 1fr);*/
+    margin: 10px 20px 45px;
+    padding: 2px;
+    background: black;
+}
+
+#shop-cart-table div {
+    overflow: hidden;
+    background-color: white;
+    padding: 8px 9px 6px;
+    margin: 1px;
+}
+
+.shopCartDeleteBtn {
+    color: red;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.display-none {
+    display: none;
+}
+
+.orderElem {
+    background: white;
+    margin: 10px;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 8px 2px rgba(34, 60, 80, 0.2);
+}
+
+.orderElem .text-elem {
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.order-table {
+    display: grid;
+    grid-row-gap: 0;
+    justify-items: stretch;
+    grid-template-columns: 3fr 2fr 1fr 1fr;
+    /*grid-template-columns: minmax(3fr, 3fr)
+    minmax(2.5fr, 2.5fr) minmax(2fr, 2fr) minmax(1fr, 1fr);*/
+    padding: 1px;
+    background: black;
+    margin: 10px 10px 30px;
+}
+
+.order-table div {
+    overflow: hidden;
+    background-color: white;
+    padding: 10px 7px;
+    margin: 1px;
+}
+
+.clickable:hover {
+    color: #415ce7;
+    cursor: pointer;
+}
+
+.order-head-cont {
+    width: available;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: fit-content;
+    align-items: start;
+    margin: 20px;
 
 }
 
+.order-head-cont * {
+    margin: 0;
+}
+
+.order-head-cont p {
+    font-size: 24px;
+    color: red;
+    cursor: pointer;
+}
+
+#orders-h1 {
+    margin: 40px;
+}
+
+#if-no-orders {
+    margin: 30px 40px;
+}
+
+#errors {
+    flex-direction: column;
+    margin: 25px 40px;
+}
+
+#item-info {
+    /*display: flex;*/
+    flex-direction: row;
+    margin: 30px 50px;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+#item-info h2 {
+    font-size: 40px ;
+}
+
+.text-info {
+    overflow: hidden;
+    max-width: 50%;
+}
+
+.img-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#item-img {
+    width: 300px;
+    background: white;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    box-shadow: 2px 2px 8px 2px rgba(34, 60, 80, 0.2);
+    border: 1px solid white;
+}
+
+#food-info-cont {
+    flex-direction: column;
+}
+
+textarea {
+    width: 300px;
+    height: 80px;
+    min-width: 300px;
+    min-height: 50px;
+    max-width: 300px;
+    max-height: 250px;
+}
+
+.beauty-button {
+    background: white;
+    font-size: 16px;
+    padding: 8px 10px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.beauty-button:hover {
+    background: #fffabe;
+}
+
+.beauty-button:active {
+    background: #a19d66;
+}
+
+#item-shop-cart-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#item-shop-cart-cont * {
+    margin: 0 10px;
+}
+
+.margin-left30 {
+    margin-left: 25px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.shoplist-cont h1 {
+    margin: 30px;
+
+}
+
+.shoplist-cont input, textarea {
+    font-size: 18px;
+    padding: 5px 10px;
+    margin-left: 20px;
+}
+
+.crud-cont input[type="text"] {
+    font-size: 18px;
+    padding: 5px 10px;
+    margin-left: 20px;
+}
+
+.crud-cont input[type="number"] {
+    font-size: 18px;
+    padding: 5px 10px;
+    margin-left: 20px;
+}
+
+.crud-cont textarea, select {
+    font-size: 18px;
+    padding: 5px 10px;
+    margin-left: 20px;
+}
+
+
+.crud-cont input[type="number"] {
+    width: 70px;
+}
+
+.crud-cont h2 {
+    margin: 25px;
+}
+
+.crud-cont h3 {
+    margin: 25px;
+}
+
+.crud-cont label {
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.shoplist-cont label {
+    font-size: 20px;
+}
+
+.crud-cont label {
+    min-width: 200px;
+}
+
+#choose-ingredients {
+    margin-left: 30px;
+}
+
+.ingredient-option {
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 10px;
+}
+
+.ingredient-option * {
+    padding: 0;
+    margin: 0;
+}
+
+.ingredient-option:hover {
+    text-decoration: underline;
+}
+
+.create-item-ingred-checkbox {
+    margin-left: 8px;
+}
+
+#crud-ingredient-list {
+    margin: 30px;
+}
+
+.ingr-cont h2 {
+    margin: 30px;
+}
+
+.ingredient-elem {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    margin: 7px 0;
+}
+
+.ingredient-elem input {
+    width: 40%;
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-size: 22px;
+}
+
+.ingredient-elem textarea {
+    resize: none;
+    width: 40%;
+    height: 45px;
+}
+
+.category-cont h2 {
+    margin: 30px;
+}
+
+.category-elem {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    margin: 7px auto;
+}
+
+.category-elem input {
+    width: 35%;
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-size: 22px;
+}
+
+.category-elem div {
+    display: flex;
+    flex-direction: row;
+}
+
+.reg-cont h2{
+    margin: 60px auto;
+    text-align: center;
+}
+
+.log-cont h2{
+    margin: 60px auto;
+    text-align: center;
+}
+
+.reg-form {
+    margin: 10px auto;
+    width: fit-content;
+    align-items: end;
+    padding-right: 150px;
+    font-size: 18px;
+}
+
+.reg-form input {
+    margin-left: 20px;
+}
+
+.reg-form label {
+}
+
+.login-form {
+    margin: 10px auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding-right: 150px;
+    font-size: 18px;
+}
+
+.login-form input {
+    margin-left: 20px;
+}
+
+.login-form label {
+}
+
+.log-cont input, .reg-form input {
+    font-size: 18px;
+    padding: 5px 10px;
+    margin-left: 20px;
+}
+
+.hello {
+    color: #641e24;
+}
+
+h1.hello {
+    font-size: 50px;
+    text-align: center;
+}
+
+h2.hello {
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+h2.hello:hover {
+    text-decoration: underline;
+}
+
+#toCatalog {
+    border: none;text-decoration: none;
+
+    text-decoration-color: #641e24;
+}

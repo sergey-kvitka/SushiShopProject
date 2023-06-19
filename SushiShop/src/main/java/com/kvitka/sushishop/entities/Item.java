@@ -1,17 +1,17 @@
 package com.kvitka.sushishop.entities;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.Length;
-import org.springframework.lang.Nullable;
+import lombok.ToString;
+
+import javax.persistence.*;
 
 @Entity(name = "items")
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 public class Item {
     @Id
     @GeneratedValue
@@ -22,10 +22,8 @@ public class Item {
 
     private Double price;
 
-    @Column(length = Length.LOB_DEFAULT)
     private String description;
 
-    @Column(length = Length.LOB_DEFAULT)
     private String imagePath;
 
     @ManyToOne
@@ -37,17 +35,5 @@ public class Item {
         this.description = description;
         this.imagePath = imagePath;
         this.category = category;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                ", imagePath='" + imagePath + '\'' +
-                ", category=" + category +
-                '}';
     }
 }

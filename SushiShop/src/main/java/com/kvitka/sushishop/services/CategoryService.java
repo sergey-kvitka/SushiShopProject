@@ -1,12 +1,14 @@
 package com.kvitka.sushishop.services;
 
 import com.kvitka.sushishop.entities.Category;
-import com.kvitka.sushishop.interfaces.SaveOrGetMethod;
 import com.kvitka.sushishop.repositories.CategoryRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class CategoryService implements SaveOrGetMethod<Category> {
+public class CategoryService {
 
     private final CategoryRepository categoryRepository;
 
@@ -14,9 +16,15 @@ public class CategoryService implements SaveOrGetMethod<Category> {
         this.categoryRepository = categoryRepository;
     }
 
-    @Override
-    public Category saveOrGet(Category category) {
-        return categoryRepository.findByName(category.getName())
-                .orElseGet(() -> categoryRepository.save(category));
+    public Category saveCategory(Category category) {
+        return categoryRepository.save(category);
+    }
+
+    public List<Category> getAllCategories() {
+        return categoryRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
+    }
+
+    public void deleteCategory(Long id) {
+        categoryRepository.deleteById(id);
     }
 }

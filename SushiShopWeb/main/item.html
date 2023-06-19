@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/icon/sushi.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Страница товара</title>
+</head>
+<body>
+<div class="all-cont">
+    <div id="errors">
+        <h1 id="if-error"></h1>
+        <a id="if-error-a"></a>
+    </div>
+
+    <div id="item-info">
+        <div class="text-info">
+            <h2 id="item-name"></h2>
+            <p id="item-price"></p>
+            <p id="item-category"></p>
+            <p id="item-desc"></p>
+            <div id="food-info-cont" style="display: none">
+                <p id="item-amount"></p>
+                <p id="item-weight"></p>
+                <p id="item-calories"></p>
+                <p id="item-ingredients"></p>
+            </div>
+        </div>
+        <div class="img-info">
+            <img id="item-img" src="img/error/no-pictures.png" alt="No image">
+            <div id="item-shop-cart-cont"></div>
+        </div>
+    </div>
+</div>
+
+<script src="js/global.js"></script>
+<script src="js/classes.js"></script>
+<script src="js/catalog/item-page.js"></script>
+</body>
+</html>

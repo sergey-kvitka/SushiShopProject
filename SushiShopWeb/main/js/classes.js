@@ -23,3 +23,11 @@ class Extra {
         this.description = description;
     }
 }
+
+class Category {
+    constructor(id, name, hyperCategory) {
+        this.id = id;
+        this.name = name;
+        this.hyperCategory = hyperCategory;
+    }
+}

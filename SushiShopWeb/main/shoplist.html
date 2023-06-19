@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/icon/cart.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Корзина</title>
+</head>
+<body>
+
+<div class="all-cont shoplist-cont">
+    <h1>Корзина</h1>
+
+    <div id="shop-cart-table">
+
+    </div>
+
+    <h1>Оформление заказа</h1>
+    <label class="margin-left30">Номер телефона<input id="create-order-phone-input" type="tel"
+                                                      placeholder="+7XXXXXXXXXX"></label>
+    <p class="error-message margin-left30" id="order-phone-message"></p>
+    <label class="margin-left30">Адрес
+        <input style="width: 300px; margin-left: 88px" id="create-order-address-input" type="text" placeholder="Адрес, куда будет доставлен заказ"></label>
+    <p class="error-message margin-left30" id="order-address-message"></p>
+    <label class="margin-left30">Комментарий
+        <textarea id="create-order-comment-input" placeholder="При необходимости добавьте комментарий к заказу"
+        ></textarea></label><br/>
+    <p class="error-message margin-left30" id="order-comment-message"></p>
+    <button class="margin-left30 beauty-button" id="create-order-btn">Оформить заказ</button>
+</div>
+
+<script src="js/global.js"></script>
+<script src="js/classes.js"></script>
+<script src="js/shoplist/shoplist.js"></script>
+</body>
+</html>
